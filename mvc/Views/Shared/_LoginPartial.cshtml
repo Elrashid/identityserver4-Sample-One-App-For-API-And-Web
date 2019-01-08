@@ -1,0 +1,11 @@
+@using System.Security.Claims
+ 
+
+@if (User.Identity.IsAuthenticated)
+{
+   <ul class="nav navbar-nav navbar-right">
+        <li><a>Hi  @(User.FindFirst("name")?.Value)!</a></li>
+        <li><a asp-area="" asp-controller="Secure" asp-action="Logout">Logout</a></li>
+    </ul>
+}
+ 
